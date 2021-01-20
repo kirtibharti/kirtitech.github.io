@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <title>Javascript</title>
+  <style>
+    body {
+      text-align: center;
+      margin: auto;
+    }
+
+    .demo {
+      font-size: 36;
+      color: darkgreen;
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      margin: auto;
+    }
+
+    .container {
+      border: 1px solid black;
+      display: inline-block;
+      text-align: center;
+      margin-left: auto;
+      padding: 1%;
+    }
+
+    .containers {
+      display: inline;
+    }
+
+    .display {
+      border: 1px solid black;
+      display: inline-block;
+      text-align: center;
+      background: rgb(104, 105, 105);
+      color: #00FFF;
+      visibility: hidden;
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo">JS Array Demo</div>
+  <br><br>
+  <div class="container">
+    <div class="containers">
+      Enter Name:
+      <input type="text" name="text" id="inputText">
+    </div><br><br>
+    <button onclick="pushData()">Add Name</button>
+    <button onclick="showData()">print</button>
+    <button onclick="clearData()">clear</button>
+  </div>
+  <br><br>
+  <div class="display" id="displayText"><br> </div>
+  <script>
+    var myArray = [];
+    function pushData() {
+      if (document.getElementById("inputText").value=="")
+       {
+        alert("Please enter any value");
+        document.getElementById("inputText").focus();
+        return;
+        }
+      var inputvalue = document.getElementById('inputText').value;
+      myArray.push(inputvalue);
+      alert("Input entered "+" '"+inputvalue+"' "+" added sucessfully.");
+      // for (i = 0; i < myArray.length; i++) 
+      // {
+      //   myArray= myArr[i] + inputvalue +  "<br>";
+      // }
+      document.getElementById("inputText").value="";
+      document.getElementById("inputText").focus();
+    }
+    function showData() {
+      var str;
+      str = "<table border=1 width='200' align='center'><tr><td>index</td><td>Data</td></tr>";
+      for (i = 0; i <= myArray.length - 1; i++) {
+        str += "<tr><td>" + i + "</td><td>" + myArray[i] + "</td></tr>";
+      }
+      str += "</table>";
+      document.getElementById("displayText").innerHTML = str;
+      document.getElementById('displayText').style.visibility = "visible";
+      document.getElementById('NameText').style.visibility = "visible";
+      document.getElementById('arrayText').style.visibility = "visible";
+    }
+    function clearData() {
+      document.getElementById("inputText").value = "";
+      document.getElementById('displayText').style.visibility = "hidden";
+      document.getElementById("inputText").focus();
+    }
+  </script>
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'sg3plcpnl0032'},{'id':'7485680'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
